@@ -24,7 +24,12 @@ function App() {
       <NavbarVariants />
 
       <div className='dropdown'>
-          <Droprunner />
+          <Droprunner isCome={false}/>
+      </div>
+
+      <div className='dropdown'>
+          <Droprunner isCome={true}/> 
+          {/* //icoon for only showing purpise */}
       </div>
       
       {/* <NavbarVariants />  */}

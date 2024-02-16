@@ -3,7 +3,7 @@ import SearchableDropdown from "./SearchableDropdown.jsx";
 import { animals } from "../data/animal.jsx";
 import { useState } from "react";
 
-const Droprunner = () => {
+const Droprunner = ({isCome}) => {
 
   const [value, setValue] = useState("");
 
@@ -24,7 +24,7 @@ const Droprunner = () => {
           id="id"
           selectedVal={value}
           handleChange={handleChange}
-          isIcon={false}
+          isIcon={isCome}
         />
       </div>
     </div>
