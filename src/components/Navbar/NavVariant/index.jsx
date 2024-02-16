@@ -3,14 +3,14 @@ import "./index.css";
 import { Navbar, Button } from "@attrybtech/attryb-ui";
 import backIcon from "../../../assets/back-icon.svg";
 
-const NavbarVariants = () => {
-  const saveandscheduleclick = () => {
-    //logic for onclick on Save and Schedule button
-  };
+const NavbarVariants = ({templateName, saveandscheduleclick,saveAndDraftClick}) => {
+  // const saveandscheduleclick = () => {
+  //   //logic for onclick on Save and Schedule button
+  // };
 
-  const saveAndDraftClick = () => {
-    //logic for onclick on Save and Draft button
-  };
+  // const saveAndDraftClick = () => {
+  //   //logic for onclick on Save and Draft button
+  // };
 
   return (
     <div className="Navbar-wrapper">
@@ -25,7 +25,7 @@ const NavbarVariants = () => {
           <>
               <div className="left-container-name-div">
                 <h2 >
-                  Campaign Name
+                  {templateName}
                 </h2>
               </div>
           </>

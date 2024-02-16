@@ -5,7 +5,7 @@ import close from  "../../../assets/close.svg";
 
 
 
-const Banner = ({onclick}) => {
+const Banner = ({onClick}) => {
   
   return (
     <Navbar className="Navbar"
@@ -16,7 +16,7 @@ const Banner = ({onclick}) => {
     }
     navbarRightSection={
         <div className="navbar-banner-right">    
-        <img src={close} alt="close_btn" onClick = {onclick} />
+        <img src={close} alt="close_btn" onClick = {onClick} />
         </div>
     }
 />

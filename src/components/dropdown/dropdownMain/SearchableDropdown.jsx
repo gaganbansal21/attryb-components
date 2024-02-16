@@ -8,6 +8,7 @@ import tickIcon from "../../../assets/tick-icon.svg";
 
 
 const SearchableDropdown = ({
+  labelName,
   options,
   label,
   id,
@@ -76,7 +77,7 @@ const SearchableDropdown = ({
     }
   };
 
-  const worker = "Label-Name";
+ 
 
   useEffect(() => {
     
@@ -106,14 +107,14 @@ const SearchableDropdown = ({
             id="label"
             className={isLabelVisible ? "labeltext" : "hidden labeltext"}
           >
-            {worker}
+            {labelName}
           </label>
           <div className="input-content-wrapper">
             {/* {selectedVal && ()} */}
             <input
               // className="input-name  padder-class"
               className={`input-name ${selectedVal ? "padder-class" : ""}`}
-              placeholder={worker}
+              placeholder={labelName}
               onFocus={handleFocusIn}
               onBlur={handleFocusOut}
               ref={inputRef}

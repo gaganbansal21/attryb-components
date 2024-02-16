@@ -7,7 +7,7 @@ import tickIcon from "../../../assets/tick-icon.svg";
 
 function TagdropperDropdown({ options, label, id, selectedVal, handleChange }) {
   const [SelectedValues, SetSelectedValues] = useState([]);
-  const [currentVal, SetcurrentVal] = useState(0);
+  // const [currentVal, SetcurrentVal] = useState(0);
   const [query, setQuery] = useState("");
   const [isOpen, setIsOpen] = useState(false);
   const [searchId, SetsearchId] = useState([]);
@@ -54,15 +54,15 @@ function TagdropperDropdown({ options, label, id, selectedVal, handleChange }) {
       SetSelectedValues([...SelectedValues, option]);
     }
   
-    setIsLabelVisible(true);
+    // setIsLabelVisible(true);
     // setIsOpen((isOpen) => !isOpen); // Uncomment if needed
   };
   
 
-  function toggle(e) {
-    // console.log(e.target);
-    setIsOpen(e && e.target === inputRef.current);
-  }
+  // function toggle(e) {
+  //   // console.log(e.target);
+  //   setIsOpen(e && e.target === inputRef.current);
+  // }
 
   
 
@@ -72,21 +72,42 @@ function TagdropperDropdown({ options, label, id, selectedVal, handleChange }) {
     return "";
   };
 
-  const [isLabelVisible, setIsLabelVisible] = useState(false);
+  // const [isLabelVisible, setIsLabelVisible] = useState(false);
 
-  const handleFocusIn = () => {
-    setIsLabelVisible(true);
-  };
+  // const handleFocusIn = () => {
+  //   setIsLabelVisible(true);
+  // };
 
-  const handleFocusOut = (e) => {
-    if (e.target.value === "") {
-      setIsLabelVisible(false);
-    }
-  };
+  // const handleFocusOut = (e) => {
+  //   if (e.target.value === "") {
+  //     setIsLabelVisible(false);
+  //   }
+  // };
+
+  useEffect(() => {
+    document.addEventListener("click", toggle);
+
+    return () => document.removeEventListener("click", toggle);
+
+  }, []);
+
+  function toggle(e) {
+    setIsOpen(e && e.target === inputRef.current);
+  }
+
   const worker = "Hello";
 
   const handleClickdropIcon = () =>{
     setIsOpen((isOpen) => !isOpen)
+  }
+
+  const handleClickonInput = () =>{
+    if(isOpen){
+      setIsOpen((isOpen) => isOpen)
+    }
+    else{
+      setIsOpen((isOpen) => !isOpen)
+    }
   }
 
   // console.log("SelectedValues",SelectedValues);
@@ -94,19 +115,20 @@ function TagdropperDropdown({ options, label, id, selectedVal, handleChange }) {
 
   return (
     <div className="main-conotainer-dropdown">
-      <div className="dropdown">
-        <div className="control" onClick={handleClickdropIcon}>
-          <div className="selected-value">
+      <div className="main-container-wrapper-class">
+        <div className="input-box-container" >
+          <div className="selected-value">input-container-with-tag
             <div className="checker-inside-contianer">
               {SelectedValues.map((el, index) => (
                 // {console.log(el)}
                 <Tag Key = {el.id} value={el.name} returnkey = {handleCloseclick}/>
               ))}
               <input
-                className= "div-input-container-input"
+                id = "div-input-container-input"
                 placeholder={worker}
-                onFocus={handleFocusIn}
-                onBlur={handleFocusOut}
+                onClick={handleClickonInput}
+                // onFocus={handleFocusIn}
+                // onBlur={handleFocusOut}
                 ref={inputRef}
                 type="text"
                 value={getDisplayValue()}
@@ -115,7 +137,7 @@ function TagdropperDropdown({ options, label, id, selectedVal, handleChange }) {
                   setQuery(e.target.value);
                   handleChange(null);
                 }}
-              ></input>
+              />
             </div>
           </div>
         </div>
@@ -126,7 +148,7 @@ function TagdropperDropdown({ options, label, id, selectedVal, handleChange }) {
 
       <div
         className={`options ${isOpen ? "open" : ""}`}
-        onFocus={handleFocusIn}
+        // onFocus={handleFocusIn}
       >
         {filter(options).map((option, index) => {
           return (
