@@ -1,0 +1,12 @@
+.Navbar {
+    background-color: #040e20 !important;
+}
+
+.navbar_left_text{
+    color: white;
+}
+
+
+.navbar-banner-right > img{
+    cursor: pointer;
+}

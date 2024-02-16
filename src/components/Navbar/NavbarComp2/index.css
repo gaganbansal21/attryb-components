@@ -1,0 +1,50 @@
+.Navbar-wrapper{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 4rem;
+}
+
+.back-navbar-container{
+    height: 4rem;
+    width: fit-content;
+    background-color: #040e20;
+    border-right: 0.1px solid rgb(110, 110, 110);
+    padding: 1.5rem ;
+    align-content: center;
+}
+
+.back-navbar-container >img{
+    width: 1.125rem;
+    height: 1.125rem;
+}
+
+.navbar-navbar-container{
+    width: 100%;
+    height: 4rem;
+}
+
+.Navbar {
+  width: 100%;
+  position: relative !important;
+  background-color: #040e20 !important;
+  margin: 0 !important;
+  padding: 1.5rem !important;
+  height: 4.05rem !important;
+}
+
+.left-section-navbar {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  /* padding: 4rem; */
+}
+
+.left-container-name-div > h2 {
+  font-size: 1rem;
+  color: white;
+  font-weight: 500;
+  /* line-height: 1.5rem; */
+  cursor: pointer;
+}

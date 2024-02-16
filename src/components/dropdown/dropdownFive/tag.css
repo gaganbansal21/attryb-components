@@ -1,0 +1,35 @@
+.tag {
+    width: fit-content;
+    height: 24px;
+    padding: 2px 4px 2px 9px;
+    border-radius: 6px;
+    border: 1px solid #D0D5DD;
+    gap: 3px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+ .tag-content {
+    color: #344054;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 20px;
+    letter-spacing: 0em;
+    text-align: center;
+}
+ 
+.cancel-icon {
+    padding: 6px;
+}
+ 
+.cancel-icon svg {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 8px;
+    height: 8px;
+    top: 3px;
+    left: 3px;
+    border: 1.5px;
+}

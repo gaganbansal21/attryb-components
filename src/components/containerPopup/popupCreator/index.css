@@ -1,0 +1,7 @@
+.alert-popup-classname{
+    position: relative;
+}
+.AlertPopup {
+    min-width: 51rem !important;
+    min-height: 43rem !important; 
+}
