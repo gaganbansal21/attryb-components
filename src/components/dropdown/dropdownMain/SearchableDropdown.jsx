@@ -14,6 +14,7 @@ const SearchableDropdown = ({
   id,
   selectedVal,
   handleChange,
+  isIcon
 }) => {
 
 
@@ -77,8 +78,6 @@ const SearchableDropdown = ({
     }
   };
 
- 
-
   useEffect(() => {
     
   }, []);
@@ -91,7 +90,7 @@ const SearchableDropdown = ({
 
   const handleKeyMovement = (e) =>{
     if(e.key === "ArrowUp"){
-      
+      console.log("1");
     }
     else if(e.key === "ArrowDown"){
       console.log("ArrowDown")
@@ -113,7 +112,7 @@ const SearchableDropdown = ({
             {/* {selectedVal && ()} */}
             <input
               // className="input-name  padder-class"
-              className={`input-name ${selectedVal ? "padder-class" : ""}`}
+              className={`input-name ${isIcon && selectedVal ? "padder-class" : ""}`}
               placeholder={labelName}
               onFocus={handleFocusIn}
               onBlur={handleFocusOut}
@@ -129,9 +128,8 @@ const SearchableDropdown = ({
               onKeyUp={handleEnterDetect}
               onKeyDown={handleKeyMovement}
             >
-              
               </input>
-            <span>{ selectedVal && (<img src={currentselectedoption.icon.peopleIcon} alt="person" className="current-selected-option"/>)}</span>
+            <span>{isIcon && selectedVal && (<img src={currentselectedoption.icon.peopleIcon} alt="person" className="current-selected-option"/>)}</span>
           </div>
         </div>
         <div className={`arrow ${isOpen ? "open" : ""}`}>
@@ -154,7 +152,7 @@ const SearchableDropdown = ({
               
             >
               <div className="options-data-single">
-                {
+                {isIcon &&
                   <img
                     src={option.icon.peopleIcon}
                     alt="person-icon"

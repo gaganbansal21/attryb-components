@@ -24,6 +24,7 @@ const Droprunner = () => {
           id="id"
           selectedVal={value}
           handleChange={handleChange}
+          isIcon={false}
         />
       </div>
     </div>
