@@ -1,8 +1,6 @@
 import React from "react";
-// import SearchableDropdown from "./SearchableDropdown.jsx";
 import { animals } from "../data/animal.jsx";
 import { useState } from "react";
-// import TagSearchableDropdown from "./TagSearchableDropdown.jsx";
 import TagdropperDropdown from "./index.jsx";
 
 const Dummy = () => {

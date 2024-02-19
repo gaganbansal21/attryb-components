@@ -3,7 +3,7 @@ import "./tag.css"
 
 function Tag({ value ,Key, returnkey}) {
 
-    console.log("name",value);
+    // console.log("name",value);
 
     const handlCloseClick = () =>{
         returnkey(Key);

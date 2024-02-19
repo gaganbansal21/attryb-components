@@ -13,28 +13,37 @@ import Dummy from './components/dropdown/dropdownFive/dummy.jsx';
 // import PopupTrigger from './components/containerPopup/popupCreator';
 // import NavbarComp from './components/NavbarComponent/index.jsx'
 import NavbarVariants from './components/Navbar/NavVariant/index.jsx'
-// import Banner from './components/Navbar/NavbarBanner/index.jsx'
+import Banner from './components/Navbar/NavbarBanner/index.jsx'
 
 function App() {
   
   return (
     <div className="App">
 
+      <div className='navabar-components-class'>
+          <NavbarVariants />
+      </div>
+      
+      <div className='navabar-components-class'>
+         <Banner />
+      </div>
 
-      <NavbarVariants />
-
-      <div className='dropdown'>
+    
+      <div className='semi-class'>
           <Droprunner isCome={false}/>
       </div>
 
-      <div className='dropdown'>
+      <div className='semi-class'>
           <Droprunner isCome={true}/> 
-          {/* //icoon for only showing purpise */}
+      </div>
+
+      <div className='none'>
+        <Dummy />
       </div>
       
       {/* <NavbarVariants />  */}
         {/* <PopupTrigger /> */}
-        {/* <Banner /> */}
+       
         {/* <Droprunner /> */}
         {/* <Dropdown /> */}
         {/* <Dummy /> */}
