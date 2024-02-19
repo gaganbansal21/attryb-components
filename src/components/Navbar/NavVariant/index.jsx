@@ -3,7 +3,7 @@ import "./index.css";
 import { Navbar, Button } from "@attrybtech/attryb-ui";
 import backIcon from "../../../assets/back-icon.svg";
 
-const NavbarVariants = ({templateName, saveandscheduleclick,saveAndDraftClick}) => {
+const NavbarVariants = ({templateName, saveandscheduleclick,saveAndDraftClick,handleExitButton}) => {
   // const saveandscheduleclick = () => {
   //   //logic for onclick on Save and Schedule button
   // };
@@ -12,10 +12,12 @@ const NavbarVariants = ({templateName, saveandscheduleclick,saveAndDraftClick}) 
   //   //logic for onclick on Save and Draft button
   // };
 
+ 
+
   return (
     <div className="Navbar-wrapper">
     <div className="back-navbar-container">
-            <img src={backIcon} alt="back-icon"></img>
+            <img src={backIcon} alt="back-icon" onClick={handleExitButton}></img>
     </div>
     
     <div className="navbar-navbar-container">

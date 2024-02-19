@@ -15,13 +15,20 @@ import Dummy from './components/dropdown/dropdownFive/dummy.jsx';
 import NavbarVariants from './components/Navbar/NavVariant/index.jsx'
 import Banner from './components/Navbar/NavbarBanner/index.jsx'
 
+
+
+
 function App() {
+
+  const handleExitButton = () =>{
+    alert("Hi");
+  }
   
   return (
     <div className="App">
 
       <div className='navabar-components-class'>
-          <NavbarVariants />
+          <NavbarVariants templateName="Campiagn name" handleExitButton={handleExitButton}/>
       </div>
       
       <div className='navabar-components-class'>

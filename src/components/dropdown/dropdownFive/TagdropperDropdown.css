@@ -70,6 +70,7 @@
 
 .selected-value{
   min-height: 20px;
+  width: 100%;
 }
 
 input{
@@ -84,6 +85,8 @@ input{
   line-height: 16px;
   letter-spacing: 0em;
   text-align: left;
+  width: 100%;
+  min-width: 10px;
 }
 
 .checker-inside-contianer {
@@ -94,6 +97,7 @@ input{
   align-items: center;
   margin: 8px;
   gap: 8px;
+  width: 90%;
 }
 
 
@@ -193,6 +197,7 @@ input{
   flex-direction: row;
   margin-left: 5px;
   align-items: center;
+  cursor: pointer;
 }
 
 .options-data-single {

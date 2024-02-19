@@ -14,7 +14,9 @@ const SearchableDropdown = ({
   id,
   selectedVal,
   handleChange,
-  isIcon
+  isIcon,
+  defaultIcon,
+  defaultImage
 }) => {
 
 
@@ -30,12 +32,7 @@ const SearchableDropdown = ({
 
   // console.log("currentselectedoption", currentselectedoption);
 
-  useEffect(() => {
-    document.addEventListener("click", toggle);
-
-    return () => document.removeEventListener("click", toggle);
-
-  }, []);
+  
 
   const selectOption = (option) => {
     setQuery(() => "");
@@ -46,8 +43,13 @@ const SearchableDropdown = ({
     setIsOpen((isOpen) => !isOpen);
   };
 
+  useEffect(() => {
+    document.addEventListener("click", toggle);
+    return () => document.removeEventListener("click", toggle);
+  }, []);
+
   function toggle(e) {
-    setIsOpen(e && e.target === inputRef.current);
+      setIsOpen(e && e.target === inputRef.current);
   }
 
   const getDisplayValue = () => {
@@ -55,7 +57,6 @@ const SearchableDropdown = ({
     if (selectedVal) {
       return selectedVal;
     }
-
     return "";
   };
 
@@ -69,7 +70,6 @@ const SearchableDropdown = ({
 
   const handleFocusIn = () => {
     setIsLabelVisible(true);
-    console.log("1  1");
   };
 
   const handleFocusOut = (e) => {
@@ -94,6 +94,19 @@ const SearchableDropdown = ({
     }
     else if(e.key === "ArrowDown"){
       console.log("ArrowDown")
+    }
+  }
+
+  const handleDropIcon = () =>{
+    setIsOpen((isOpen) => !isOpen);
+  }
+
+  const handleInputClick = () =>{
+    if(isOpen){
+      setIsOpen((isOpen) => isOpen);
+    }
+    else{
+      setIsOpen((isOpen) => !isOpen);
     }
   }
 
@@ -124,19 +137,18 @@ const SearchableDropdown = ({
                 setQuery(e.target.value);
                 handleChange(null);
               }}
-              onClick={toggle}
+              onClick={handleInputClick}
               onKeyUp={handleEnterDetect}
               onKeyDown={handleKeyMovement}
             >
               </input>
-            <span>{isIcon && selectedVal && (<img src={currentselectedoption.icon.peopleIcon} alt="person" className="current-selected-option"/>)}</span>
+            <span>{isIcon && selectedVal && (<img src={defaultIcon ? defaultImage : currentselectedoption.icon.peopleIcon} alt="person" className="current-selected-option"/>)}</span>
           </div>
         </div>
-        <div className={`arrow ${isOpen ? "open" : ""}`}>
-          <img src={dropdownIcon} alt="" onClick={toggle} />
+        <div className={`arrow ${isOpen ? "open" : ""}`} >
+          <img src={dropdownIcon} className="dropdown-icon" alt="dropdown-icon" onClick={handleDropIcon} />
         </div>
       </div>
-
 
       <div className={`options ${isOpen ? "open" : ""}`} onFocus={handleFocusIn}>
         {filter(options).map((option, index) => {

@@ -58,6 +58,7 @@ input:focus::placeholder {
   right: 26px;
   top: 14px;
   width: 0;
+  cursor: pointer;
 }
 
 .dropdown .arrow.open {
@@ -156,7 +157,7 @@ input:focus::placeholder {
 }
 
 .option-div-data {
-  width: 375px;
+  width: 389px !important;
   height: 48px;
   padding: 2px, 6px, 2px, 6px;
   font-family: Inter;
@@ -225,4 +226,8 @@ input:focus::placeholder {
 
 .control {
   border: none;
+}
+
+.option-div-data{
+  width: 389px;
 }

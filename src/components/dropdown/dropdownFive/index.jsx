@@ -82,49 +82,66 @@ function TagdropperDropdown({ options, label, id, selectedVal, handleChange }) {
   };
 
   const getPlaceholderValue = () => {
-    if (searchId.length > 0 || query) {
-      return "";
+    if (isFocused) {
+      return ;
     }
-    return labelName;
+    else if(searchId.length > 0){
+      return ;
+    }
+    else{
+      return labelName;
+    }
   };
 
   useEffect(() => {
     if (searchId.length > 0 && inputRef.current) {
       inputRef.current.focus();
     }
+    else if(isFocused){
+      inputRef.current.focus();
+    }
   }, [searchId]);
 
   useEffect(() => {
-    document.addEventListener("click", toggle);
+    if(isFocused){
+      setIsLabelVisible(true);
+      setIsOpen(true);
+    }
+    else{
+      console.log("Hi");
+      console.log(searchId.length);
+      if(searchId.length > 0){
+        console.log("Hello");
+      }
+      else{
+        setIsLabelVisible(false);
+      }
+      setIsOpen(false);
+    }
+  }, [isFocused]);
 
-    return () => document.removeEventListener("click", toggle);
-  }, []);
+
+
+  // useEffect(() => {
+  //   document.addEventListener("click", toggle);
+
+  //   return () => document.removeEventListener("click", toggle);
+  // }, []);
 
   // function toggle(e) {
-  //   console.log("event",e.target.id);
-  //   if(e.target.id === 'listdivitem'){
-  //     console.log(isOpen);
+  //   const clickedElementId = e.target.id.toLowerCase(); // Convert to lowercase
+  
+  //   console.log('Clicked Element ID:', clickedElementId);
+  
+  //   if (clickedElementId === 'listdivitem' || clickedElementId === 'listdivitemoptionslabel' || clickedElementId === 'listdivitemoptionstick' ) {
+  //     console.log('Setting isOpen to true');
   //     setIsOpen(true);
-  //   }
-  //   else{
+  //   } else {
+  //     console.log('Setting isOpen based on inputRef');
   //     setIsOpen(e && e.target === inputRef.current);
   //   }
   // }
-  function toggle(e) {
-    const clickedElementId = e.target.id.toLowerCase(); // Convert to lowercase
   
-    console.log('Clicked Element ID:', clickedElementId);
-  
-    if (clickedElementId === 'listdivitem' || clickedElementId === 'listdivitemoptionslabel' || clickedElementId === 'listdivitemoptionstick' ) {
-      console.log('Setting isOpen to true');
-      setIsOpen(true);
-    } else {
-      console.log('Setting isOpen based on inputRef');
-      setIsOpen(e && e.target === inputRef.current);
-    }
-  }
-  
-
   const handleClickdropIcon = () => {
     setIsOpen((isOpen) => !isOpen);
   };
@@ -169,7 +186,7 @@ function TagdropperDropdown({ options, label, id, selectedVal, handleChange }) {
             <label
               htmlFor="searchTerm"
               id="label"
-              className={isLabelVisible ? "labeltext" : "hidden labeltext"}
+              className={isLabelVisible ? "labeltext" : "hidden"}
             >
               {labelName}
             </label>
@@ -179,7 +196,7 @@ function TagdropperDropdown({ options, label, id, selectedVal, handleChange }) {
                 <Tag Key={el.id} value={el.name} returnkey={handleCloseclick} />
               ))}
               <input
-                autoFocus={worker}
+                autoFocus={isFocused}
                 className="div-input-container-input"
                 placeholder={getPlaceholderValue()}
                 onClick={handleClickonInput}
@@ -196,7 +213,7 @@ function TagdropperDropdown({ options, label, id, selectedVal, handleChange }) {
             </div>
           </div>
         </div>
-        <div className={`arrow ${isOpen ? "open" : ""}`}>
+        <div className={`arrow ${isFocused ? "open" : ""}`}>
           <img src={dropdownIcon} alt="" onClick={handleClickdropIcon} />
         </div>
       </div>

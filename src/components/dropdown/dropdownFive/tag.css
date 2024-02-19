@@ -11,6 +11,7 @@
     justify-content: center;
 }
  .tag-content {
+    font-family: Inter;
     color: #344054;
     font-size: 14px;
     font-weight: 500;

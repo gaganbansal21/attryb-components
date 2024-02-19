@@ -17,6 +17,11 @@
 .back-navbar-container >img{
     width: 1.125rem;
     height: 1.125rem;
+    cursor: pointer;
+}
+
+.back-navbar-container >img {
+  box-shadow: rgba(255, 255, 255, 0.24) 0px 3px 8px;
 }
 
 .navbar-navbar-container{
