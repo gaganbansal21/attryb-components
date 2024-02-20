@@ -14,7 +14,8 @@ import Dummy from './components/dropdown/dropdownFive/dummy.jsx';
 // import NavbarComp from './components/NavbarComponent/index.jsx'
 import NavbarVariants from './components/Navbar/NavVariant/index.jsx'
 import Banner from './components/Navbar/NavbarBanner/index.jsx'
-
+import { Button } from '@attrybtech/attryb-ui'
+import Three from './components/Navbar/dropdownthree/index.jsx';
 
 
 
@@ -36,17 +37,28 @@ function App() {
       </div>
 
     
-      <div className='semi-class'>
+      {/* <div className='semi-class'>
           <Droprunner isCome={false}/>
       </div>
 
       <div className='semi-class'>
           <Droprunner isCome={true}/> 
+      </div> */}
+
+      <div className='none'>
+        <Three isIcon={true}/>
       </div>
+
+      <div className='none'>
+        <Three isIcon={false}/>
+      </div>
+
 
       <div className='none'>
         <Dummy />
       </div>
+
+      
       
       {/* <NavbarVariants />  */}
         {/* <PopupTrigger /> */}

@@ -11,7 +11,7 @@ function Tag({ value ,Key, returnkey}) {
     
     return (
         <div className="tag">
-            <div className='tag-content'>{value}</div>
+            <div className='tag-content text-sm--md'>{value}</div>
             <div className='cancel-icon' onClick={handlCloseClick}>
                 {/* <AiOutlineClose/> */}
                 <svg width="8" height="8" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg">
