@@ -2,13 +2,10 @@ import React from 'react'
 import "./tag.css"
 
 function Tag({ value ,Key, returnkey}) {
-
     // console.log("name",value);
-
     const handlCloseClick = () =>{
         returnkey(Key);
     }
-    
     return (
         <div className="tag">
             <div className='tag-content text-sm--md'>{value}</div>
@@ -19,7 +16,6 @@ function Tag({ value ,Key, returnkey}) {
                 </svg>
             </div>
         </div>
-
     )
 }
 

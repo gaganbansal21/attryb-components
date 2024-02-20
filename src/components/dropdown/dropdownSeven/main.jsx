@@ -1,9 +1,10 @@
 import React from "react";
-import { animals } from "../../dropdown/data/animal.jsx";
+import { animals } from "../data/animal.jsx";
 import { useState } from "react";
-import DropdownThree from "./dropdownthree.jsx";
+import DropdownStaticDynamic from "./index.jsx";
 
-const Three = ({isIcon}) => {
+
+const StatDrop = ({isIcon}) => {
   const [value, setValue] = useState("");
 
   // console.log("value",value);
@@ -17,7 +18,7 @@ const Three = ({isIcon}) => {
     <div className="dropdown-container-box">
       {/* <label>{lableName}</label> */}
       <div>
-        <DropdownThree
+        <DropdownStaticDynamic
           options={animals}
           label="name"
           id="id"
@@ -30,4 +31,4 @@ const Three = ({isIcon}) => {
   );
 };
 
-export default Three;
+export default StatDrop;

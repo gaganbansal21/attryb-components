@@ -15,7 +15,8 @@ import Dummy from './components/dropdown/dropdownFive/dummy.jsx';
 import NavbarVariants from './components/Navbar/NavVariant/index.jsx'
 import Banner from './components/Navbar/NavbarBanner/index.jsx'
 import { Button } from '@attrybtech/attryb-ui'
-import Three from './components/Navbar/dropdownthree/index.jsx';
+import Three from './components/dropdown/dropdownthree/index.jsx';
+import StatDrop from './components/dropdown/dropdownSeven/main.jsx';
 
 
 
@@ -53,7 +54,11 @@ function App() {
         <Three isIcon={false}/>
       </div>
 
+      <div className='none'>
+        <StatDrop isIcon={false}/>
+      </div>
 
+      
       <div className='none'>
         <Dummy />
       </div>

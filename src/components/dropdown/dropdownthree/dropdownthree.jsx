@@ -128,28 +128,7 @@ function DropdownThree({
     }
   }
 
-  // const handleKeyMovement = (e) =>{
-  //   if(e.key === "ArrowUp"){
-  //     console.log("1");
-  //   }
-  //   else if(e.key === "ArrowDown"){
-  //     console.log("ArrowDown")
-  //   }
-  // }
-
-  const handleKeyDown = event => {
-    console.log('User pressed: ', event.key);
-
-    // console.log(message);
-
-    if (event.key === 'Backspace') {
-      // 👇️ your logic here
-      console.log('Backspace key pressed ✅');
-    }
-  };
-
-  // console.log(selectedVal);
-
+  
   return (
     <div
       id=""
@@ -183,23 +162,15 @@ function DropdownThree({
                 // onBlur={handleFocusOut}
                 ref={inputRef}
                 type="text"
-
-                
-
                 value={getDisplayValue()}
                 name="searchTerm"
                 onChange={(e) => {
-                  handleEnterDetect(e)
                   setQuery(e.target.value);
                   handleChange(null);
                 }}
-
-                onKeyUp={handleEnterDetect}
-                onKeyDown={handleKeyDown}
-                onKeyUpCapture={handleKeyDown}
+                
                 // size={value.length + 1}
                 style={{ width: "100%" }}
-                
               />
                <span>{isIcon && selectedVal && (<img src={currentselectedoption.icon.peopleIcon} alt="person" className="current-selected-option"/>)}</span>
             </div>

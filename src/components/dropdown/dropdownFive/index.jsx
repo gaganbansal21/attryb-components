@@ -148,6 +148,24 @@ function TagdropperDropdown({ options, label, id, selectedVal, handleChange }) {
     }
   };
 
+ 
+  const handleKeyDown = event => {
+    console.log('User pressed: ', event.key);
+    if (event.key === 'Backspace') {
+      if(query === '' && searchId.length > 0){
+          const newsearch = [...searchId];
+          const i = searchId.length;
+          // console.log("i",i);
+          newsearch.splice(i-1, 1);
+          SetsearchId(newsearch);
+          
+          const updatedvalues = [...SelectedValues];
+          updatedvalues.splice(i-1, 1);
+          SetSelectedValues(updatedvalues);
+        }
+      }
+    }
+  
 
   return (
     <div
@@ -189,6 +207,7 @@ function TagdropperDropdown({ options, label, id, selectedVal, handleChange }) {
                 onChange={(e) => {
                   setQuery(e.target.value);
                 }}
+                onKeyDown={handleKeyDown}
                 // size={value.length + 1}
                 style={{ width: searchId.length > 0 ? "10em" : "100%" }}
               />
